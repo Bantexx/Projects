@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="~/Content/Main.css" type="text/css" />
+    <script src="~/Scripts/Chart.js"></script>
+    <script type="text/javascript" src="~/Data/DataSet.json"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.js"></script>
+</head>
+<body>
+    <div>
+        <div class="Graf">
+            <canvas id="Mychart" width="350" height="350"></canvas>
+        </div>
+        <div class="option_table">
+            @using (Html.BeginForm("Check", "Main", FormMethod.Post, new { @class = "ValidForm" }))
+            {
+                <p>Function: y=@Html.TextBox("A", "", new { @class = "field", required = "required" })x^2+@Html.TextBox("B", "", new { @class = "field", required = "required" })x+@Html.TextBox("C", "", new { @class = "field", required = "required" })</p>
+                <p>Step: @Html.TextBox("Step", "", new { @class = "field", required = "required" })</p>
+                <p>From: @Html.TextBox("RangeFrom", "", new { @class = "field", required = "required" })to @Html.TextBox("RangeTo", "", new { @class = "field", required = "required" })</p>
+                <input type="submit" value="Plot" style="width:48px;margin-left:80px" />
+
+            }
+            <div class="wrongs">
+            </div>
+        </div>
+        
+    </div>
+    <script src="~/Scripts/DrawParabola.js"></script>
+    <script src="~/Scripts/ValidationData.js"></script>
+</body>
+</html>

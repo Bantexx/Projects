@@ -1,0 +1,26 @@
+﻿html,body{
+    height:100%;
+}
+body>div{
+    min-height:100%;
+    display:grid;
+    grid-template-columns:55% 45%;
+}
+.option_table{
+    border:1px solid black;
+    margin-left:10px;
+    width:210px;
+    height:250px;
+}
+.option_table input{
+    width:20px;
+}
+.field:valid {
+    border: 1px solid green;
+}
+.field:invalid{
+    border:1px dashed red;
+}
+.Graf{
+    border:1px solid black;
+}
