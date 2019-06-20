@@ -1,3 +1,3 @@
 # Projects
-ChillProjects
+ParabolicFunc
 Программа дял построения графика параболы.
