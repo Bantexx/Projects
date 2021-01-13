@@ -9,10 +9,12 @@ namespace IteratorAndVisitor
 {
     class Article : IEnumerable
     {
-        private Author[] _authors;
-        public Article(Author[] authors)
+        private string name;
+        private Author[] authors;
+        public Article(Author[] _authors,string _name)
         {
-            _authors = authors;
+            authors =_authors;
+            name = _name;
         }
         IEnumerator IEnumerable.GetEnumerator()
         {
@@ -20,7 +22,7 @@ namespace IteratorAndVisitor
         }
         public AuthorEnumerator GetEnumerator()
         {
-            return new AuthorEnumerator(_authors);
+            return new AuthorEnumerator(authors);
         }      
     }
 }
